@@ -149,8 +149,6 @@ button[disabled] { opacity: .5; cursor: wait; }
 .ft-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 18px;
   font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); }
 #counter, #liveclock { color: var(--ph); }
-.outline { margin: 22px 0 0; text-align: center; font: 700 110px/1 'Mono', monospace; letter-spacing: 10px; text-transform: uppercase;
-  color: transparent; -webkit-text-stroke: 1px var(--dim); text-shadow: none; user-select: none; }
 
 .fx-win { border-color: var(--dim) !important; background: #000 !important; color: var(--ph) !important; }
 
@@ -171,6 +169,5 @@ button[disabled] { opacity: .5; cursor: wait; }
   .three { grid-template-columns: 1fr; }
   .log li { grid-template-columns: 1fr; gap: 2px; }
   .plates { grid-template-columns: 1fr 1fr; }
-  .outline { font-size: 56px; letter-spacing: 6px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .tabs button.on { animation: none; } }
