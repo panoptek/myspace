@@ -7,13 +7,15 @@
 <meta name="description" content="ilia. nineteen, moscow, student. films, machines, dark fantasy, big pixels.">
 <meta property="og:title" content="ilia — life add-on">
 <meta property="og:description" content="nineteen · moscow · films, machines, dark fantasy, big pixels">
-<meta property="og:image" content="https://panoptek.github.io/myspace/assets/engrave/hero.png">
+<meta property="og:image" content="https://panoptek.github.io/myspace/assets/engrave/col-right.png">
 <meta name="theme-color" content="#030605">
 <link rel="icon" href="assets/engrave/skull.png">
 <link rel="stylesheet" href="assets/css/engrave.css">
 <!--
   engravings: public domain via wikimedia commons, dithered to 1 bit with imagemagick.
-  hero ........ Dürer, Knight, Death and the Devil, 1513
+  col-left .... Dürer, The Four Horsemen, 1498
+  col-right ... Dürer, Knight, Death and the Devil, 1513
+  portrait .... Holbein, Dance of Death: The Astrologer, c.1538
   g1 .......... Dürer, Melencolia I, 1514
   g2 .......... Dürer, Saint Jerome in His Cell, 1511
   g3 .......... Dürer, The Four Horsemen, 1498
@@ -28,89 +30,138 @@
 
 <div class="page">
 
-  <!-- status line -->
   <div class="status" aria-hidden="true">
     <span>ilia (tm)</span>
     <span>life add-on</span>
     <span>research</span>
-    <span>ver 2.2</span>
+    <span>ver 2.3</span>
     <span>port......<span id="port">3</span></span>
   </div>
 
-  <!-- masthead -->
+  <!-- masthead: title left, nfo table right -->
   <header class="mast" id="top">
-    <h1 class="black">ilia</h1>
-    <p class="mast-sub">nineteen &#183; moscow &#183; student &#183; est. mmxxv</p>
+    <div class="mast-l">
+      <h1 class="black">ilia</h1>
+      <div class="mast-sub">a personal life add-on &#183; moscow &#183; est. mmxxv</div>
+    </div>
+<pre class="frame mast-nfo">+------------------------------+
+|  supplier ..... ilia         |
+|  class ........ student      |
+|  location ..... moscow, ru   |
+|  uptime ....... 19 years     |
+|  status ....... online       |
+|  mood ......... wired        |
++------------------------------+</pre>
   </header>
 
   <nav class="tabs" aria-label="sections">
     <a href="#about">About</a>
+    <a href="#modules">Modules</a>
     <a href="#log">Log</a>
     <a href="#plates">Plates</a>
     <a href="#book">Book</a>
     <button id="tune-btn" title="drone on/off">Drone</button>
   </nav>
 
-  <!-- hero: text panel + engraving panel -->
-  <section class="hero" id="about">
-    <div class="panel panel-txt">
-      <span class="tag">about</span>
-      <p class="lead">I watch too many films, build things with machines, and take old computers apart to see what they were thinking.</p>
-      <p>Nineteen, Moscow, still a student on paper. Nights go to series I should have finished years ago, days go to neural nets that mostly work, and everything in between goes to hardware off the second-hand market.</p>
-      <p>The taste is fixed: dark fantasy without a happy ending, pixel art where you can count the pixels, black paper and one colour of ink. This page is that taste with a guestbook.</p>
-<pre class="kv">status ..... online
-mood ....... wired
-weapon ..... a terminal and a language model
-ration ..... one more episode
-uptime ..... 19 years, no reboot</pre>
-      <div class="chips" aria-label="modules">
-        <span>blade runner 2049</span><span>the lighthouse</span><span>severance</span><span>arcane</span><span>claude code</span><span>comfyui</span><span>local llms</span><span>old gpus</span><span>mech keyboards</span><span>3am</span>
-      </div>
-    </div>
-    <figure class="panel panel-img">
-      <span class="tag">plate 0</span>
-      <img src="assets/engrave/hero.png" alt="Dürer, Knight, Death and the Devil, 1513, dithered to one bit">
-      <figcaption>d&uuml;rer &#183; knight, death and the devil &#183; 1513</figcaption>
-    </figure>
-  </section>
+  <div class="body">
 
-  <!-- log -->
-  <section class="sec" id="log">
-    <h2 class="sec-h">Log</h2>
-    <ol class="log">
-      <li><span class="d">mmxxvi.ix.21</span>Version 2.2. Rebuilt around the engravings instead of on top of them. Fewer words, one colour, no spinning suns.</li>
-      <li><span class="d">mmxxvi.ix.21</span>Threw out every generated picture. D&uuml;rer, Holbein and Flammarion moved in, quantised to one bit.</li>
-      <li><span class="d">mmxxvi.ix.20</span>Went live on github pages. The neon geocities draft went to /dev/null where it belongs.</li>
-    </ol>
-  </section>
+    <aside class="col">
+      <figure>
+        <img src="assets/engrave/col-left.png" alt="Dürer, The Four Horsemen, 1498">
+        <figcaption>d&uuml;rer &#183; the four horsemen &#183; 1498</figcaption>
+      </figure>
+    </aside>
 
-  <!-- plates -->
-  <section class="sec" id="plates">
-    <h2 class="sec-h">Plates</h2>
-    <div class="plates">
-      <figure class="plate" data-src="assets/engrave/g1.png" tabindex="0"><img src="assets/engrave/g1.png" alt="Dürer, Melencolia I, 1514" loading="lazy"><figcaption>i &#183; melencolia</figcaption></figure>
-      <figure class="plate" data-src="assets/engrave/g2.png" tabindex="0"><img src="assets/engrave/g2.png" alt="Dürer, Saint Jerome in His Cell, 1511" loading="lazy"><figcaption>ii &#183; the cell</figcaption></figure>
-      <figure class="plate" data-src="assets/engrave/g3.png" tabindex="0"><img src="assets/engrave/g3.png" alt="Dürer, The Four Horsemen, 1498" loading="lazy"><figcaption>iii &#183; the riders</figcaption></figure>
-      <figure class="plate" data-src="assets/engrave/g4.png" tabindex="0"><img src="assets/engrave/g4.png" alt="Dürer, Rhinocerus, 1515" loading="lazy"><figcaption>iv &#183; rhinocerus</figcaption></figure>
-      <figure class="plate" data-src="assets/engrave/g5.png" tabindex="0"><img src="assets/engrave/g5.png" alt="Flammarion engraving, 1888" loading="lazy"><figcaption>v &#183; the edge</figcaption></figure>
-      <figure class="plate" data-src="assets/engrave/g6.png" tabindex="0"><img src="assets/engrave/g6.png" alt="Holbein, Death's Coat of Arms, c.1538" loading="lazy"><figcaption>vi &#183; memento mori</figcaption></figure>
-    </div>
-    <p class="note">d&uuml;rer &#183; holbein &#183; flammarion &#183; 1498&#8211;1888 &#183; one bit &#183; click to enlarge</p>
-  </section>
+    <main class="center">
 
-  <!-- guestbook -->
-  <section class="sec" id="book">
-    <h2 class="sec-h">Book</h2>
-    <p class="note left">sign it or pass through quietly</p>
-    <div id="gb-status" class="gb-status"></div>
-    <div id="gb-list"></div>
-    <form class="gb-form" id="gb-form" autocomplete="off">
-      <input id="gb-name" type="text" maxlength="24" placeholder="handle" required>
-      <input id="gb-msg" type="text" maxlength="140" placeholder="message" required>
-      <input id="gb-hp" type="text" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-      <button id="gb-go" type="submit">Sign</button>
-    </form>
-  </section>
+      <div class="band">&#8801; about / supplier info &#8801;</div>
+      <section id="about" class="sec">
+        <figure class="portrait">
+          <img src="assets/engrave/portrait.png" alt="Holbein, The Astrologer, c.1538">
+          <figcaption>holbein &#183; the astrologer</figcaption>
+        </figure>
+        <p class="lead">I watch too many films, build things with machines, and take old computers apart to see what they were thinking.</p>
+        <p>Nineteen, Moscow, still a student on paper. Nights go to series I should have finished years ago, days go to neural nets that mostly work, and everything in between goes to hardware off the second-hand market.</p>
+        <p>The taste is fixed: dark fantasy without a happy ending, pixel art where you can count the pixels, black paper and one colour of ink. This page is that taste with a guestbook.</p>
+        <div class="btns" aria-label="88x31 buttons">
+          <span class="btn88 inv">ilia<small>life add-on</small></span>
+          <span class="btn88">built with<small>machines</small></span>
+          <span class="btn88 dots">dark<small>fantasy</small></span>
+          <span class="btn88">one bit<small>zone</small></span>
+          <a class="btn88" href="https://github.com/panoptek" target="_blank" rel="noopener">github<small>panoptek</small></a>
+        </div>
+      </section>
+
+      <div class="band">&#8801; modules &#8801;</div>
+      <section id="modules" class="sec three">
+        <div>
+          <div class="sub-h">watching</div>
+          <ul><li>blade runner 2049</li><li>the lighthouse</li><li>the northman</li><li>severance</li><li>arcane</li><li>true detective s1</li></ul>
+        </div>
+        <div>
+          <div class="sub-h">building</div>
+          <ul><li>claude code</li><li>comfyui</li><li>local llms</li><li>this page</li><li>things at 3am</li></ul>
+        </div>
+        <div>
+          <div class="sub-h">iron</div>
+          <ul><li>old gpus</li><li>older boards</li><li>mech keyboards</li><li>anything second-hand</li><li>fresh thermal paste</li></ul>
+        </div>
+      </section>
+
+      <div class="band">&#8801; release notes / log &#8801;</div>
+      <section id="log" class="sec">
+        <ol class="log">
+          <li><span class="d">mmxxvi.ix.21</span>Version 2.3. The zine layout is back: two pillars, one column, plates in the middle. Fewer words, one colour, nothing spins.</li>
+          <li><span class="d">mmxxvi.ix.21</span>Threw out every generated picture. D&uuml;rer, Holbein and Flammarion moved in, quantised to one bit.</li>
+          <li><span class="d">mmxxvi.ix.20</span>Went live on github pages. The neon geocities draft went to /dev/null where it belongs.</li>
+        </ol>
+      </section>
+
+      <div class="band">&#8801; plates &#8801;</div>
+      <section id="plates" class="sec">
+        <div class="plates">
+          <figure class="plate" data-src="assets/engrave/g1.png" tabindex="0"><img src="assets/engrave/g1.png" alt="Dürer, Melencolia I, 1514" loading="lazy"><figcaption>i &#183; melencolia</figcaption></figure>
+          <figure class="plate" data-src="assets/engrave/g2.png" tabindex="0"><img src="assets/engrave/g2.png" alt="Dürer, Saint Jerome in His Cell, 1511" loading="lazy"><figcaption>ii &#183; the cell</figcaption></figure>
+          <figure class="plate" data-src="assets/engrave/g3.png" tabindex="0"><img src="assets/engrave/g3.png" alt="Dürer, The Four Horsemen, 1498" loading="lazy"><figcaption>iii &#183; the riders</figcaption></figure>
+          <figure class="plate" data-src="assets/engrave/g4.png" tabindex="0"><img src="assets/engrave/g4.png" alt="Dürer, Rhinocerus, 1515" loading="lazy"><figcaption>iv &#183; rhinocerus</figcaption></figure>
+          <figure class="plate" data-src="assets/engrave/g5.png" tabindex="0"><img src="assets/engrave/g5.png" alt="Flammarion engraving, 1888" loading="lazy"><figcaption>v &#183; the edge</figcaption></figure>
+          <figure class="plate" data-src="assets/engrave/g6.png" tabindex="0"><img src="assets/engrave/g6.png" alt="Holbein, Death's Coat of Arms, c.1538" loading="lazy"><figcaption>vi &#183; memento mori</figcaption></figure>
+        </div>
+        <p class="note">d&uuml;rer &#183; holbein &#183; flammarion &#183; 1498&#8211;1888 &#183; one bit &#183; click to enlarge</p>
+      </section>
+
+      <div class="band">&#8801; member info / book &#8801;</div>
+      <section id="book" class="sec">
+<pre class="frame">+------------------------------------------------+
+|  sign the book below, or pass through quietly  |
++------------------------------------------------+</pre>
+        <div id="gb-status" class="gb-status"></div>
+        <div id="gb-list"></div>
+        <form class="gb-form" id="gb-form" autocomplete="off">
+          <input id="gb-name" type="text" maxlength="24" placeholder="handle" required>
+          <input id="gb-msg" type="text" maxlength="140" placeholder="message" required>
+          <input id="gb-hp" type="text" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <button id="gb-go" type="submit">Sign</button>
+        </form>
+      </section>
+
+    </main>
+
+    <aside class="col">
+      <figure>
+        <img src="assets/engrave/col-right.png" alt="Dürer, Knight, Death and the Devil, 1513">
+        <figcaption>d&uuml;rer &#183; knight, death and the devil &#183; 1513</figcaption>
+      </figure>
+    </aside>
+
+  </div>
+
+  <div class="banks" aria-hidden="true">
+    <span>bank 1</span>
+    <div class="bank-row"><span class="bank">borders</span><span class="bank">and</span><span class="bank">boundaries</span></div>
+    <span>bank 2</span>
+    <div class="bank-row"><span class="bank dim">hybrid</span><span class="bank dim">processes</span><span class="bank dim">no cookies</span><span class="bank dim">only dust</span></div>
+  </div>
 
   <footer class="ft">
     <div class="ft-meta">
