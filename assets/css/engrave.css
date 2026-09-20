@@ -17,8 +17,11 @@ html { background: var(--bg); scroll-behavior: smooth; }
 body {
   margin: 0; background: var(--bg); color: var(--ph);
   font: 15px/1.5 'Mono', 'Courier New', monospace; letter-spacing: .3px;
-  text-shadow: var(--glow); cursor: crosshair;
+  text-shadow: var(--glow);
+  cursor: url('../img/cursor.png') 1 1, auto;
 }
+a, button, .plate, .tabs a, .tabs button, label, [onclick] { cursor: url('../img/hand.png') 10 2, pointer; }
+input { cursor: text; }
 a { color: var(--hot); text-decoration: none; border-bottom: 1px solid var(--ln); }
 a:hover { color: #000; background: var(--ph); text-shadow: none; }
 ::selection { background: var(--ph); color: #000; text-shadow: none; }
