@@ -1,13 +1,8 @@
-/* iL1A :: LiFE ADD-ON — main.js */
+/* ilia — life add-on — main.js */
 (function () {
   'use strict';
   var FAST = /[?&]fast/.test(location.search); /* skip reveal animations (screenshots) */
 
-  var NFO_TEXT =
-    "here's the latest ADD-ON for LiFE!\n" +
-    "unpack the archive into C:\\LiFE and run.\n" +
-    "if the directory isn't present, make one. done.\n" +
-    "greetz to all who keep the web strange.";
 
   function initFx() {
     if (!window.FX) return;
@@ -19,17 +14,14 @@
     var clock = document.getElementById('liveclock');
     if (clock) FX.clock(clock, { fmt: 'full' });
 
-    var nfo = document.getElementById('nfo-txt');
-    if (nfo) { if (FAST) nfo.textContent = NFO_TEXT; else FX.typewriter(nfo, NFO_TEXT, { cps: 38 }); }
-
     if (FX.konami) FX.konami(function () {
-      FX.popup('HiDDEN PROCESS UNLOCKED.<br><br>nothing happens. but the dust settles differently now.', { title: 'SYSTEM' });
+      FX.popup('hidden process unlocked.<br><br>nothing happens. the dust just settles differently now.', { title: 'system' });
     });
 
     var tb = document.getElementById('tune-btn');
     if (tb && FX.tune) tb.addEventListener('click', function () {
-      if (FX.tune.playing) { FX.tune.stop(); tb.textContent = 'More+'; tb.classList.remove('on'); }
-      else { FX.tune.start(); tb.textContent = 'More+ \u266a'; tb.classList.add('on'); }
+      if (FX.tune.playing) { FX.tune.stop(); tb.textContent = 'Drone'; tb.classList.remove('on'); }
+      else { FX.tune.start(); tb.textContent = 'Drone \u266a'; tb.classList.add('on'); }
     });
 
     var plates = document.querySelectorAll('.plate[data-src]');
@@ -44,108 +36,6 @@
       pl.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
     });
 
-    /* welcome popup: once per session, not on every reload */
-    var seen = false;
-    try { seen = sessionStorage.getItem('il1a_hello'); sessionStorage.setItem('il1a_hello', '1'); } catch (e) {}
-    if (!seen && !FAST) setTimeout(function () {
-      FX.popup(
-        'welcome to the add-on.<br><br>sign the book, read the notes, mind the borders and boundaries.',
-        { title: 'SYSTEM MESSAGE' }
-      );
-    }, 700);
-  }
-
-  /* ---- ascii raster: dithered png -> block glyphs (NAKZ panel) ---- */
-  function asciify(pre) {
-    var src = pre.getAttribute('data-src');
-    var cols = parseInt(pre.getAttribute('data-cols'), 10) || 100;
-    var img = new Image();
-    img.onload = function () {
-      /* glyph cell is ~1:2 (width:height) at font-size == line-height */
-      var rows = Math.round(cols * (img.height / img.width) * 0.5);
-      var c = document.createElement('canvas');
-      c.width = cols; c.height = rows;
-      var g = c.getContext('2d');
-      g.drawImage(img, 0, 0, cols, rows);
-      var d;
-      try { d = g.getImageData(0, 0, cols, rows).data; } catch (e) { return; }
-      var ramp = ' \u00b7:\u2591\u2592\u2593\u2588';
-      var lines = [];
-      for (var y = 0; y < rows; y++) {
-        var line = '';
-        for (var x = 0; x < cols; x++) {
-          var a = d[(y * cols + x) * 4 + 3] / 255;
-          line += ramp.charAt(Math.min(ramp.length - 1, Math.floor(a * ramp.length)));
-        }
-        lines.push(line.replace(/\s+$/, ''));
-      }
-      /* boot it in: reveal line by line */
-      var i = 0;
-      pre.textContent = '';
-      if (FAST) { pre.textContent = lines.join('\n'); return; }
-      var t = setInterval(function () {
-        pre.textContent += lines[i] + '\n';
-        if (++i >= lines.length) clearInterval(t);
-      }, 14);
-    };
-    img.src = src;
-  }
-
-  /* ---- boot log: ECHO lines typed into the left panel ---- */
-  var BOOT = [
-    ['h', '@ECHO OFF'],
-    ['d', 'MODE CON: COLS=80 LINES=25'],
-    ['d', 'COLOR 0B'],
-    ['',  ''],
-    ['',  ':: SiMULATE BiOS SETUP SCREEN WiTH iNTERACTiVE MENU'],
-    ['d', 'ECHO ================================================'],
-    ['',  'ECHO  iL1A MODULAR BiOS v2.1 - LiFE CONFiGURATiON UTiLiTY'],
-    ['',  'ECHO  COPYRiGHT (C) MMXXV-MMXXVi iL1A, MOSCOW'],
-    ['d', 'ECHO ================================================'],
-    ['bl','iL1A :: LiFE ADD-ON'],
-    ['',  'ECHO.'],
-    ['',  'ECHO  [1] STANDARD LiFE FEATURES ....... student, 19'],
-    ['',  'ECHO  [2] ADVANCED LiFE FEATURES ....... films, series, 3am'],
-    ['',  'ECHO  [3] iNTEGRATED PERiPHERALS ....... gpu, old boards, keebs'],
-    ['',  'ECHO  [4] POWER MANAGEMENT SETUP ....... none. wired.'],
-    ['',  'ECHO  [5] PNP / LLM CONFiGURATiONS ..... claude, qwen, local'],
-    ['',  'ECHO  [6] PC HEALTH STATUS ............. thermal paste: fresh'],
-    ['',  'ECHO  [7] LOAD DARK FANTASY DEFAULTS ... [x]'],
-    ['',  'ECHO  [8] SAVE & EXiT ................... never'],
-    ['',  'ECHO.'],
-    ['d', 'SET /P CHOiCE=ENTER YOUR SELECTiON (1-8): '],
-    ['',  'iF "%CHOiCE%"=="7" GOTO DARK'],
-    ['',  'iF "%CHOiCE%"=="8" GOTO EXiT'],
-    ['',  'GOTO MENU'],
-    ['',  ''],
-    ['h', ':DARK'],
-    ['',  'ECHO  KNiGHTS iN RUSTED PLATE. TOWERS AGAiNST A BiG MOON.'],
-    ['',  'ECHO  LARGE PiXELS. TWO COLOURS. NO HAPPY ENDiNGS.'],
-    ['',  'ECHO  ENGRAViNGS: DURER 1498/1513/1514, HOLBEiN 1538,'],
-    ['',  'ECHO  DORE 1861, FLAMMARiON 1888. QUANTiSED TO 1 BiT.'],
-    ['',  'ECHO.'],
-    ['',  'ECHO  > TAKE THE TiME TO REALiSE YOU ARE NOT LOADiNG.......'],
-    ['',  'ECHO  > YOU ARE THE LOADER.'],
-    ['',  ''],
-    ['h', ':EXiT'],
-    ['',  'ECHO  BORDERS AND BOUNDARiES // HYBRiD PROCESSES'],
-    ['d', 'PAUSE >NUL'],
-    ['d', 'CLS']
-  ];
-  function bootLog(el) {
-    var i = 0;
-    if (FAST) { while (i < BOOT.length) step(); return; }
-    var t = setInterval(function () {
-      step();
-      if (i >= BOOT.length) clearInterval(t);
-    }, 55);
-    function step() {
-      var L = BOOT[i++];
-      var s = document.createElement('span');
-      s.className = 'e' + (L[0] ? ' e-' + L[0] : '');
-      s.textContent = L[1] || '\u00a0';
-      el.appendChild(s);
-    }
   }
 
   /* ---- roman dates ---- */
@@ -230,20 +120,20 @@
       if (!entries.length) {
         var empty = document.createElement('div');
         empty.className = 'gb-e';
-        empty.textContent = '\u2014 the book is empty. be the first to leave dust. \u2014';
+        empty.textContent = 'the book is empty. leave the first mark.';
         list.appendChild(empty);
         return;
       }
       entries.forEach(function (e) { list.appendChild(gbEntry(e)); });
     }
 
-    say(REMOTE ? 'connecting to the archive\u2026' : 'offline mode: entries live only in this browser');
+    say(REMOTE ? 'reaching the archive\u2026' : 'offline: entries stay in this browser');
     gbFetch().then(function (entries) {
       render(entries);
-      say(REMOTE ? entries.length + ' signatures on record' : 'offline mode: entries live only in this browser');
+      say(REMOTE ? entries.length + ' marks on record' : 'offline: entries stay in this browser');
     }).catch(function () {
       render(gbLoadLocal().reverse());
-      say('archive unreachable \u2014 showing local copy');
+      say('archive unreachable, showing local copy');
     });
 
     form.addEventListener('submit', function (ev) {
@@ -263,10 +153,10 @@
         var ph = list.querySelector('.gb-e:not(:first-child)');
         if (ph && ph.textContent.indexOf('the book is empty') !== -1) ph.remove();
         nameEl.value = ''; msgEl.value = '';
-        say('signed. the dust remembers you.');
+        say('signed. noted.');
         try { localStorage.setItem('il1a_gb_last', String(Date.now())); } catch (e) {}
       }).catch(function () {
-        say('the archive refused. try again later.');
+        say('the archive refused. try later.');
       }).then(function () { btn.disabled = false; });
     });
   }
@@ -274,11 +164,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     initFx();
     initGuestbook();
-    var pre = document.getElementById('ascii');
-    if (pre) asciify(pre);
-    var echo = document.getElementById('echo');
-    if (echo) bootLog(echo);
-    var port = document.getElementById('bios-port');
+    var port = document.getElementById('port');
     if (port) port.textContent = String(new Date().getDay() || 7);
   });
 })();

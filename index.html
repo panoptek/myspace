@@ -1,290 +1,125 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iL1A :: LiFE ADD-ON</title>
-<meta name="description" content="iL1A — личная страница. Москва, 19, студент, фильмы, ИИ, железо, дарк фентези и пиксель-арт.">
-<meta property="og:title" content="iL1A :: LiFE ADD-ON">
-<meta property="og:description" content="a personal life add-on · est. mmxxv · moscow">
-<meta property="og:image" content="https://panoptek.github.io/myspace/assets/engrave/portrait.png">
-<meta name="theme-color" content="#020504">
+<title>ilia — life add-on</title>
+<meta name="description" content="ilia. nineteen, moscow, student. films, machines, dark fantasy, big pixels.">
+<meta property="og:title" content="ilia — life add-on">
+<meta property="og:description" content="nineteen · moscow · films, machines, dark fantasy, big pixels">
+<meta property="og:image" content="https://panoptek.github.io/myspace/assets/engrave/hero.png">
+<meta name="theme-color" content="#030605">
 <link rel="icon" href="assets/engrave/skull.png">
 <link rel="stylesheet" href="assets/css/engrave.css">
 <!--
-  engravings (all public domain, via wikimedia commons; dithered to 1 bit with imagemagick):
-  sun/moon ...... Nuremberg Chronicle, 1493 (17th c. hand-coloured impression)
-  col-left ...... Dürer, The Four Horsemen (Apocalypse), 1498
-  col-right ..... Dürer, Knight, Death and the Devil, 1513
-  portrait ...... Holbein, Dance of Death: The Astrologer, c.1538
-  g1 ............ Dürer, Melencolia I, 1514
-  g2 ............ Dürer, Saint Jerome in His Cell, 1511
-  g3 ............ Doré, Inferno canto III: Charon, 1861
-  g4 ............ Doré, The Tower of Babel, 1866
-  g5 ............ Flammarion engraving, 1888
-  g6 / skull .... Holbein, Death's Coat of Arms, c.1538
-  rhino ......... Dürer, Rhinocerus, 1515
-  hand .......... ATF printer's fist (manicule)
+  engravings: public domain via wikimedia commons, dithered to 1 bit with imagemagick.
+  hero ........ Dürer, Knight, Death and the Devil, 1513
+  g1 .......... Dürer, Melencolia I, 1514
+  g2 .......... Dürer, Saint Jerome in His Cell, 1511
+  g3 .......... Dürer, The Four Horsemen, 1498
+  g4 .......... Dürer, Rhinocerus, 1515
+  g5 .......... Flammarion engraving, 1888
+  g6 / icon ... Holbein, Death's Coat of Arms, c.1538
 -->
 </head>
 <body>
 <div class="scan" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
 <div class="vignette" aria-hidden="true"></div>
 
-<!-- ==================== BIOS STRIP ==================== -->
-<div class="bios" aria-hidden="true">
-  <span>iL1A LiFE ADD-ON (TM)</span>
-  <span>COPYRiGHT iL1A(C) MMXXVi</span>
-  <span>RESEARCH</span>
-  <span>VER V2.1</span>
-  <span>PORT......<span id="bios-port">3</span></span>
-</div>
+<div class="page">
 
-<nav class="tabs" aria-label="sections">
-  <div class="tabs-in">
-    <a href="#about">Summary</a>
-    <a href="#interests">Modules</a>
-    <a href="#builds">Boot</a>
-    <a href="#journal">Seq</a>
-    <a href="#gallery">Plates</a>
-    <a href="#guestbook">Book</a>
-    <button id="tune-btn" title="drone on/off">More+</button>
+  <!-- status line -->
+  <div class="status" aria-hidden="true">
+    <span>ilia (tm)</span>
+    <span>life add-on</span>
+    <span>research</span>
+    <span>ver 2.2</span>
+    <span>port......<span id="port">3</span></span>
   </div>
-</nav>
 
-<div class="sheet">
-
-  <!-- ==================== HEADER (iRead) ==================== -->
-  <header class="hd" id="top">
-    <img class="hd-sun" src="assets/engrave/sun.png" alt="" onerror="this.style.display='none'">
-    <div class="hd-title">
-      <h1 class="black">iL1A</h1>
-      <div class="hd-sub">&#8212; a personal life add-on &#183; est. mmxxv &#183; moscow &#8212;</div>
-    </div>
-    <img class="hd-moon" src="assets/engrave/moon.png" alt="" onerror="this.style.display='none'">
+  <!-- masthead -->
+  <header class="mast" id="top">
+    <h1 class="black">ilia</h1>
+    <p class="mast-sub">nineteen &#183; moscow &#183; student &#183; est. mmxxv</p>
   </header>
 
-  <div class="rule">&#9670;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9670;</div>
-  <div class="ticker" aria-hidden="true"><span id="ticker-txt">&#9642; welcome, traveller &#9642; ты на личной странице ильи &#9642; гравюры: дюрер, гольбейн, доре &#8212; 1513&#8211;1888, оцифровано в 1 бит &#9642; sign the book or perish quietly &#9642; no cookies, only dust &#9642; borders and boundaries // hybrid processes &#9642; greetz to all who keep the web strange &#9642;</span></div>
+  <nav class="tabs" aria-label="sections">
+    <a href="#about">About</a>
+    <a href="#log">Log</a>
+    <a href="#plates">Plates</a>
+    <a href="#book">Book</a>
+    <button id="tune-btn" title="drone on/off">Drone</button>
+  </nav>
 
-  <!-- ==================== BIOS HERO (NAKZ) ==================== -->
-  <div class="bios-hero">
-    <div class="panel">
-      <span class="tag">BOOT LOG</span>
-      <div class="panel-echo" id="echo"></div>
-    </div>
-    <div class="panel panel-ascii">
-      <span class="tag">RASTER // MEMENTO MORi</span>
-      <pre id="ascii" data-src="assets/engrave/skull.png" data-cols="100" aria-label="ascii: череп с герба смерти гольбейна"></pre>
-    </div>
-  </div>
-
-  <!-- ==================== BODY 3 COLS ==================== -->
-  <div class="body">
-
-    <aside class="col col-l">
-      <figure style="margin:0">
-        <img src="assets/engrave/col-left.png" alt="дюрер, четыре всадника апокалипсиса, 1498" onerror="this.style.display='none'">
-        <figcaption>d&uuml;rer &#183; mcdxcviii</figcaption>
-      </figure>
-    </aside>
-
-    <main class="center">
-
-      <div class="band">&#8801; ABOUT / SUPPLiER iNFO &#8801;</div>
-
-      <section id="about" class="nfo">
-<pre class="frame">+========================================================+
-|  * SUPPLiER ...... iL1A        * STATUS .... online    |
-|  * CLASS ......... student     * MOOD ...... wired     |
-|  * LOCATiON ...... moscow, ru  * UPTiME .... 19 years  |
-|  * WEAPON ........ llm + term  * RATiON .... series    |
-+========================================================+</pre>
-        <div class="about-wrap">
-          <figure class="portrait">
-            <img src="assets/engrave/portrait.png" alt="гольбейн, пляска смерти: астролог" onerror="this.parentNode.style.display='none'">
-            <figcaption>holbein &#183; the astrologer</figcaption>
-          </figure>
-          <p class="body-txt">Илья. Девятнадцать, Москва, студент. Смотрю фильмы и сериалы больше, чем положено человеку с дедлайнами. Копаюсь в <b>железе</b> и в <b>нейронках</b> &#8212; билжу с их помощью всякую дичь, иногда она даже работает.</p>
-          <p class="body-txt">Люблю дарк-фентези и пиксель-арт: рыцари в ржавых доспехах, башни на фоне большой луны, крупный пиксель и два цвета. Эта страница &#8212; попытка поселить всё это в одном месте. Гравюры тут настоящие: Дюрер, Гольбейн, Доре &#8212; пятьсот лет, пережатые в один бит и подсвеченные фосфором.</p>
-        </div>
-        <div class="btns" aria-label="88x31 buttons">
-          <span class="btn88 inv">iL1A<small>life add-on</small></span>
-          <span class="btn88">built with<small>machines</small></span>
-          <span class="btn88 dots">dark<small>fantasy</small></span>
-          <span class="btn88">1-bit<small>zone</small></span>
-          <span class="btn88 dots">moscow<small>ru &#183; 3am</small></span>
-          <a class="btn88" href="https://github.com/panoptek" target="_blank" rel="noopener">github<small>panoptek</small></a>
-        </div>
-      </section>
-
-      <div class="band">&#8801; LiKES // DiSLiKES &#8801;</div>
-      <section id="likes" class="nfo two-col">
-        <div>
-          <div class="sub-h">&#10015; LiKES</div>
-          <ul>
-            <li>дарк-фентези без хэппи-энда</li>
-            <li>пиксель-арт, где видно каждый пиксель</li>
-            <li>сериал на всю ночь вместо сна</li>
-            <li>запах новой железки</li>
-            <li>когда нейронка с первого раза поняла</li>
-            <li>Москва в три ночи, когда никого нет</li>
-          </ul>
-        </div>
-        <div>
-          <div class="sub-h">&#10015; DiSLiKES</div>
-          <ul>
-            <li>&#171;смотри с второго сезона, там начинается&#187;</li>
-            <li>финалы сериалов (почти все)</li>
-            <li>термопаста на видеокарте</li>
-            <li>&#171;ии заберёт работу&#187; как тема для разговора</li>
-            <li>пары в 8:30</li>
-            <li>скруглённые углы</li>
-          </ul>
-        </div>
-      </section>
-
-      <div class="band">&#8801; iNTERESTS // MODULES &#8801;</div>
-      <section id="interests" class="nfo">
-        <div class="four-col">
-          <div>
-            <div class="sub-h">FiLMS</div>
-            <ul>
-              <li>blade runner 2049</li>
-              <li>the lighthouse</li>
-              <li>the northman</li>
-              <li>nosferatu</li>
-              <li>stalker</li>
-            </ul>
-          </div>
-          <div>
-            <div class="sub-h">SERiES</div>
-            <ul>
-              <li>arcane</li>
-              <li>severance</li>
-              <li>true detective s1</li>
-              <li>dark</li>
-              <li>the last of us</li>
-            </ul>
-          </div>
-          <div>
-            <div class="sub-h">Ai</div>
-            <ul>
-              <li>claude code</li>
-              <li>qwen-image</li>
-              <li>local llms</li>
-              <li>comfyui</li>
-              <li>vibe coding at 3am</li>
-            </ul>
-          </div>
-          <div>
-            <div class="sub-h">iRON</div>
-            <ul>
-              <li>видеокарты</li>
-              <li>старые платы</li>
-              <li>механические клавы</li>
-              <li>что угодно с авито</li>
-              <li>термопаста</li>
-            </ul>
-          </div>
-        </div>
-        <img class="rhino" src="assets/engrave/rhino.png" alt="дюрер, носорог, 1515" onerror="this.style.display='none'">
-        <div class="rhino-cap">rhinocervs &#183; d&uuml;rer 1515 &#183; armoured, like a good pc case</div>
-      </section>
-
-      <div class="band">&#8801; BUiLDS // ARTiFACTS &#8801;</div>
-      <section id="builds" class="nfo">
-<pre class="frame frame-open">+--------------------------------------------------------+
-|  things assembled with the help of machines            |
-+--------------------------------------------------------+</pre>
-        <div class="build">
-          <span class="build-n">&#9642; LiFE ADD-ON</span> <span class="build-t">[ this page ]</span><br>
-          <span class="build-d">монохромный nfo-зин × bios. html + css + js, ни одного фреймворка. гравюры &#8212; public domain, дизеринг &#8212; imagemagick, код &#8212; claude. <a href="https://github.com/panoptek/myspace" target="_blank" rel="noopener">source &raquo;</a></span>
-        </div>
-        <div class="build">
-          <span class="build-n">&#9642; [ REDACTED ]</span> <span class="build-t">[ wip ]</span><br>
-          <span class="build-d">следующий артефакт ещё не раскопан. следите за release notes.</span>
-        </div>
-      </section>
-
-      <div class="band">&#8801; RELEASE NOTES // JOURNAL &#8801;</div>
-      <section id="journal" class="nfo">
-<pre class="frame frame-open">+--------------------------------------------------------+
-|  R E L E A S E   N O T E S                             |
-+--------------------------------------------------------+</pre>
-        <div class="typed"><span id="nfo-txt"></span><span class="caret" aria-hidden="true">&#9608;</span></div>
-        <div class="log">
-          <div class="log-e"><span class="log-d">&#9642; mmxxvi.ix.21</span> v2.1: генерёнка выброшена. теперь тут дюрер, гольбейн и доре в один бит, а сверху &#8212; bios-терминал. фосфор включён.</div>
-          <div class="log-e"><span class="log-d">&#9642; mmxxvi.ix.21</span> страница вышла в сеть. neocities не пустил по геолокации &#8212; живём на github pages.</div>
-          <div class="log-e"><span class="log-d">&#9642; mmxxvi.ix.20</span> v1: неоновый geocities-вариант отправлен в /dev/null. монохром победил.</div>
-        </div>
-      </section>
-
-      <div class="band">&#8801; GALLERY // PLATES &#8801;</div>
-      <section id="gallery" class="nfo">
-        <div class="plates">
-          <figure class="plate" data-src="assets/engrave/g1.png" tabindex="0"><img src="assets/engrave/g1.png" alt="дюрер, меланхолия I, 1514" loading="lazy"><figcaption>i. melencolia</figcaption></figure>
-          <figure class="plate" data-src="assets/engrave/g2.png" tabindex="0"><img src="assets/engrave/g2.png" alt="дюрер, святой иероним в келье, 1511" loading="lazy"><figcaption>ii. the cell</figcaption></figure>
-          <figure class="plate" data-src="assets/engrave/g3.png" tabindex="0"><img src="assets/engrave/g3.png" alt="доре, харон, ад песнь III" loading="lazy"><figcaption>iii. charon</figcaption></figure>
-          <figure class="plate" data-src="assets/engrave/g4.png" tabindex="0"><img src="assets/engrave/g4.png" alt="доре, вавилонская башня" loading="lazy"><figcaption>iv. the tower</figcaption></figure>
-          <figure class="plate" data-src="assets/engrave/g5.png" tabindex="0"><img src="assets/engrave/g5.png" alt="гравюра фламмариона, 1888" loading="lazy"><figcaption>v. the edge</figcaption></figure>
-          <figure class="plate" data-src="assets/engrave/g6.png" tabindex="0"><img src="assets/engrave/g6.png" alt="гольбейн, герб смерти" loading="lazy"><figcaption>vi. memento mori</figcaption></figure>
-        </div>
-        <div class="plates-note">d&uuml;rer &#183; dor&eacute; &#183; holbein &#183; flammarion &#183; 1 bit &#183; click to enlarge</div>
-      </section>
-
-      <div class="band">&#8801; MEMBER iNFO // GUESTBOOK &#8801;</div>
-      <section id="guestbook" class="nfo">
-<pre class="frame frame-open">+--------------------------------------------------------+
-|  sign the book below &#183; or perish quietly              |
-+--------------------------------------------------------+</pre>
-        <div id="gb-status" class="gb-status"></div>
-        <div id="gb-list"></div>
-        <form class="gb-form" id="gb-form" autocomplete="off">
-          <input id="gb-name" type="text" maxlength="24" placeholder="handle" required>
-          <input id="gb-msg" type="text" maxlength="140" placeholder="message" required>
-          <input id="gb-hp" type="text" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-          <button id="gb-go" type="submit">&#187; SiGN</button>
-        </form>
-      </section>
-
-    </main>
-
-    <aside class="col col-r">
-      <figure style="margin:0">
-        <img src="assets/engrave/col-right.png" alt="дюрер, рыцарь, смерть и дьявол, 1513" onerror="this.style.display='none'">
-        <figcaption>d&uuml;rer &#183; mdxiii</figcaption>
-      </figure>
-    </aside>
-
-  </div>
-
-  <!-- ==================== BANKS (NAKZ) ==================== -->
-  <div class="banks" aria-hidden="true">
-    <span>Bank 1</span>
-    <div class="bank-row"><span class="bank">borders</span><span class="bank">and</span><span class="bank">boundaries</span></div>
-    <span>Bank 2</span>
-    <div class="bank-row"><span class="bank dim">hybrid</span><span class="bank dim">processes</span><span class="bank dim">no cookies</span><span class="bank dim">only dust</span></div>
-  </div>
-
-  <div class="rule">&#9670;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9670;</div>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="ft">
-<pre class="frame ft-frame">+==============================================================+
-|  BORDERS AND BOUNDARIES                //  HYBRID PROCESSES   |
-+==============================================================+</pre>
-    <div class="ft-meta">
-      <img class="ft-skull" src="assets/engrave/skull.png" alt="" onerror="this.style.display='none'">
-      <div>
-        visitor no. <span id="counter"></span> &#183; local time <span id="liveclock"></span><br>
-        hand-set in a text editor &#183; no cookies &#183; no trackers &#183; only dust<br>
-        &#169; mmxxv&#8211;mmxxvi iL1A &#183; <a href="https://github.com/panoptek" target="_blank" rel="noopener">github</a> &#183; <a href="https://github.com/panoptek/myspace" target="_blank" rel="noopener">source</a> &#183; <a href="#top">&uarr; top</a>
+  <!-- hero: text panel + engraving panel -->
+  <section class="hero" id="about">
+    <div class="panel panel-txt">
+      <span class="tag">about</span>
+      <p class="lead">I watch too many films, build things with machines, and take old computers apart to see what they were thinking.</p>
+      <p>Nineteen, Moscow, still a student on paper. Nights go to series I should have finished years ago, days go to neural nets that mostly work, and everything in between goes to hardware off the second-hand market.</p>
+      <p>The taste is fixed: dark fantasy without a happy ending, pixel art where you can count the pixels, black paper and one colour of ink. This page is that taste with a guestbook.</p>
+<pre class="kv">status ..... online
+mood ....... wired
+weapon ..... a terminal and a language model
+ration ..... one more episode
+uptime ..... 19 years, no reboot</pre>
+      <div class="chips" aria-label="modules">
+        <span>blade runner 2049</span><span>the lighthouse</span><span>severance</span><span>arcane</span><span>claude code</span><span>comfyui</span><span>local llms</span><span>old gpus</span><span>mech keyboards</span><span>3am</span>
       </div>
-      <img class="ft-hand" src="assets/engrave/hand.png" alt="" onerror="this.style.display='none'">
     </div>
-    <div class="outline" aria-hidden="true">iL1A<small>(c)</small></div>
+    <figure class="panel panel-img">
+      <span class="tag">plate 0</span>
+      <img src="assets/engrave/hero.png" alt="Dürer, Knight, Death and the Devil, 1513, dithered to one bit">
+      <figcaption>d&uuml;rer &#183; knight, death and the devil &#183; 1513</figcaption>
+    </figure>
+  </section>
+
+  <!-- log -->
+  <section class="sec" id="log">
+    <h2 class="sec-h">Log</h2>
+    <ol class="log">
+      <li><span class="d">mmxxvi.ix.21</span>Version 2.2. Rebuilt around the engravings instead of on top of them. Fewer words, one colour, no spinning suns.</li>
+      <li><span class="d">mmxxvi.ix.21</span>Threw out every generated picture. D&uuml;rer, Holbein and Flammarion moved in, quantised to one bit.</li>
+      <li><span class="d">mmxxvi.ix.20</span>Went live on github pages. The neon geocities draft went to /dev/null where it belongs.</li>
+    </ol>
+  </section>
+
+  <!-- plates -->
+  <section class="sec" id="plates">
+    <h2 class="sec-h">Plates</h2>
+    <div class="plates">
+      <figure class="plate" data-src="assets/engrave/g1.png" tabindex="0"><img src="assets/engrave/g1.png" alt="Dürer, Melencolia I, 1514" loading="lazy"><figcaption>i &#183; melencolia</figcaption></figure>
+      <figure class="plate" data-src="assets/engrave/g2.png" tabindex="0"><img src="assets/engrave/g2.png" alt="Dürer, Saint Jerome in His Cell, 1511" loading="lazy"><figcaption>ii &#183; the cell</figcaption></figure>
+      <figure class="plate" data-src="assets/engrave/g3.png" tabindex="0"><img src="assets/engrave/g3.png" alt="Dürer, The Four Horsemen, 1498" loading="lazy"><figcaption>iii &#183; the riders</figcaption></figure>
+      <figure class="plate" data-src="assets/engrave/g4.png" tabindex="0"><img src="assets/engrave/g4.png" alt="Dürer, Rhinocerus, 1515" loading="lazy"><figcaption>iv &#183; rhinocerus</figcaption></figure>
+      <figure class="plate" data-src="assets/engrave/g5.png" tabindex="0"><img src="assets/engrave/g5.png" alt="Flammarion engraving, 1888" loading="lazy"><figcaption>v &#183; the edge</figcaption></figure>
+      <figure class="plate" data-src="assets/engrave/g6.png" tabindex="0"><img src="assets/engrave/g6.png" alt="Holbein, Death's Coat of Arms, c.1538" loading="lazy"><figcaption>vi &#183; memento mori</figcaption></figure>
+    </div>
+    <p class="note">d&uuml;rer &#183; holbein &#183; flammarion &#183; 1498&#8211;1888 &#183; one bit &#183; click to enlarge</p>
+  </section>
+
+  <!-- guestbook -->
+  <section class="sec" id="book">
+    <h2 class="sec-h">Book</h2>
+    <p class="note left">sign it or pass through quietly</p>
+    <div id="gb-status" class="gb-status"></div>
+    <div id="gb-list"></div>
+    <form class="gb-form" id="gb-form" autocomplete="off">
+      <input id="gb-name" type="text" maxlength="24" placeholder="handle" required>
+      <input id="gb-msg" type="text" maxlength="140" placeholder="message" required>
+      <input id="gb-hp" type="text" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <button id="gb-go" type="submit">Sign</button>
+    </form>
+  </section>
+
+  <footer class="ft">
+    <div class="ft-meta">
+      <span>visitor <span id="counter"></span></span>
+      <span>local time <span id="liveclock"></span></span>
+      <span>no cookies &#183; no trackers</span>
+      <span><a href="https://github.com/panoptek" target="_blank" rel="noopener">github</a> &#183; <a href="https://github.com/panoptek/myspace" target="_blank" rel="noopener">source</a> &#183; <a href="#top">top</a></span>
+    </div>
+    <div class="outline" aria-hidden="true">ilia</div>
   </footer>
 
 </div>
